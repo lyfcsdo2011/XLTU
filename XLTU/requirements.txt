@@ -1,0 +1,8 @@
+apex==0.9.10dev
+numpy==1.21.2
+pandas==1.2.3
+scikit_learn==1.0.2
+seqeval==1.2.2
+torch==1.10.2
+tqdm==4.63.0
+transformers==4.16.2
