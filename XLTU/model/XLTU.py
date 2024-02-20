@@ -155,14 +155,6 @@ class XLTU(nn.Module):
                 return loss, logits, logits.argmax(dim=-1), labels.view(-1) # loss, logits, predictions, labels
             else: # for evaluation
                 return logits
-
-        # elif task == 2:
-        #     transformer_out = self.model(inputs_ids)[0]
-        #     prediction_scores = self.mlm(transformer_out)
-        #     loss_fct = nn.CrossEntropyLoss()
-            
-        #     masked_lm_loss = loss_fct(prediction_scores.view(-1, self.tokenizer.vocab_size), inputs_ids.view(-1))
-        #     return masked_lm_loss, prediction_scores, prediction_scores.argmax(dim=-1), inputs_ids.view(-1)
         
         else:
             print('Invalid task. task has to be 0 or 1')

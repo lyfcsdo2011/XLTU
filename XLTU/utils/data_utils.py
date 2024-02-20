@@ -166,25 +166,6 @@ class SLProcessor:
         return 0
 
 
-    # set_type: string. 'train', 'valid', or 'test'.
-    def _create_examples(self, data, set_type):
-        examples = []
-
-        for i, (sentence, label, task) in enumerate(data):
-            guid = "%s-%s" % (set_type, i)
-            text_a = sentence
-            text_b = None
-            label = label
-            task = task
-            examples.append(InputExample(
-                guid=guid, text_a=text_a, text_b=text_b, label=label, task=task))
-        return examples
-
-    @staticmethod
-    def get_task_id():
-        return 2
-
-
 # Encode the dataset to find out the length of the longest sequence
 def findout_max_seq_length(examples, encode_method):
     max_seq_length = 0
